@@ -4,21 +4,18 @@ import {Link} from "react-router-dom";
 
 const Header = (props) => (
     <div>
-        {props.path == "./home" && (
-            <div className='header'>
-                <Link to={props.path}>
-                    <div className='title'>Tic Tac Toe</div>
-                </Link>
-                <div className='title'>Leaderboard</div>
-            </div>)}
-        {props.path == "./scoreBoard" && (
-            <div className='header'>
-                <div className='title'>Tic Tac Toe</div>
-                <Link to={props.path}>
-                    <div className='title'>Leaderboard</div>
-                </Link>
+        <nav className="navbar navbar-inverse">
+            <div className="container-fluid">
+                <div className="navbar-header">
+                    <Link to='/home'><h1>TicTacToe</h1></Link>
+                </div>
             </div>
-        )}
+        </nav>
+        <div className="sidenav">
+            <Link to='/home'>Game</Link>
+            <Link to='/scoreBoard'>LeaderBoard</Link>
+        </div>
+
     </div>);
 
 Header.propTypes = {};

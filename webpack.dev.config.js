@@ -36,25 +36,19 @@ module.exports = {
                 loader: "babel-loader",
                 exclude: /node_modules/
             }, {
-                rules: [{
-                    test: /\.(png|jpg|svg|woff|woff2)?(\?v=\d+.\d+.\d+)?$/,
-                    loader: 'url-loader?limit=8192'
-                }, {
-                    test: /\.(eot|ttf)$/,
-                    loader: 'file-loader'
+                rules: [ {
+                    test: /\.css$/,
+                    loaders: [ 'style-loader', 'css-loader' ],
+                    include: __dirname
                 },
                     {
-                        test: /\.less$/,
-                        use: [{
-                            loader: "style-loader"
-                        }, {
-                            loader: "css-loader"
-                        }, {
-                            loader: "less-loader"
-                        }]
-
+                        test: /\.(png|jpg|svg|woff|woff2)?(\?v=\d+.\d+.\d+)?$/,
+                        loader: 'url-loader?limit=8192'
                     },
-                ]
+                    {
+                        test: /\.(eot|ttf)$/,
+                        loader: 'file-loader'
+                    }]
             }
         ]
     }

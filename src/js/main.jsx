@@ -6,7 +6,8 @@ import {combineReducers, createStore, applyMiddleware} from "redux";
 import stateReducer from "./reducers/statereducer";
 
 // import {logger, crashReporter} from "./middlewares/midlleware";
-import "../css/styles.less";
+import "../css/bootstrap.css";
+import "../css/styles.css";
 import "./common/utils/utils";
 import App from "./app";
 import rootSaga from "./sagas/saga";

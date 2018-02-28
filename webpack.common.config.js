@@ -36,13 +36,11 @@ module.exports = {
                 exclude: /node_modules/
             }, {
                 test: /\.css$/,
-                loaders: [{
-                    loader: "style-loader"
-                },
-                    {
-                        loader: "css-loader"
-                    }]
+                loader: "style-loader"
+            }, {
+                test: /\.css$/,
+                loader: "css-loader"
+            }]
             }
-        ]
     }
 }
